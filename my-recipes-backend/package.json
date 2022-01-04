@@ -1,0 +1,22 @@
+{
+  "name": "my-recipes-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "express-fileupload": "^1.2.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.5.1",
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "start": "nodemon App.js"
+  },
+  "author": "jb",
+  "license": "ISC"
+}
