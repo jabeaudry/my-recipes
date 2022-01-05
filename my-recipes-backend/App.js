@@ -66,7 +66,9 @@ app.get("/recipes", async (req,res) => {
     
 });
 
-//gets the specific recipe with its ingredients
+//gets the specific recipe
+
+//gets the specific ingredients
 app.get("/recIngr/:id", async (req,res) => {
     console.log(req.params);
     db.query(`SELECT * FROM recipes LEFT JOIN ingredients ON recipes.recipeID = ingredients.recipeID WHERE recipes.recipeID = "${req.params.id}";`, (err, results) => { 
