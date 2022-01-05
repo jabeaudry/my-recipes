@@ -57,7 +57,7 @@ function Create() {
         inputText={inputText}
       />
       <IngredientList setRecipes={setRecipes} recipes={recipes}/>
-      <Link to="./view">
+      <Link to="/view">
         <button onClick={submitRecipe}>
           Submit Recipe
         </button>

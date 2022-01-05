@@ -66,6 +66,16 @@ app.get("/recipes", async (req,res) => {
     
 });
 
+//gets the specific recipe with its ingredients
+app.get("/recIngr/:id", async (req,res) => {
+    console.log(req.params);
+    db.query(`SELECT * FROM recipes LEFT JOIN ingredients ON recipes.recipeID = ingredients.recipeID WHERE recipes.recipeID = "${req.params.id}";`, (err, results) => { 
+		if (err) throw err;
+        res.send(results); 
+        console.log(results);
+    }); 
+});
+
 //sends the title, link, ingredients and image of the recipe to the db when button is pressed
 app.post("/submitRecipe", async (req,res) => {
     // console.log(req);
