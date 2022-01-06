@@ -1,7 +1,7 @@
 import React, {useEffect, useLayoutEffect, useState} from 'react';
 import {Route, Link, Router} from 'react-router-dom';
 import NoRecipes from './Components/NoRecipes'; 
-
+import './css/Menu.css';
 
 
 function Menu (){
@@ -20,20 +20,42 @@ function Menu (){
         getRecipeName();
     }, []);
 
+    //verifies URLs for images
+    function checkURL(url) {
+        if (url.match(/\.(jpeg|jpg|gif|png)$/) != null){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     return(
         <div className="Menu">
+        <div className="background-img"></div>    
             <header>
                 <h1>My Recipes</h1>
             </header>
-            {
-                recipes.map((element)  => {
-                    return(
-                        <Link to={"/view/" + element.recipeID}>
-                            <li>{element.recipeName}</li>
-                        </Link>
-                    )
-                })
-            }
+            <div className = "recipes-container">
+                <Link to={"/create/"}>
+                    <div className="create-recipe-button">
+                        Create Recipe
+                    </div>
+                </Link>
+                
+                {
+                    recipes.map((element)  => {
+                        return(
+                                <Link to={"/view/" + element.recipeID}>
+                                    <div className = "recipe-square">
+                                        <li>{element.recipeName}</li>
+                                    </div> 
+                                </Link>
+                            
+                        )
+                    })
+                }
+            </div>
         </div>
     )
 }

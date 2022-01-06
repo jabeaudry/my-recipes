@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Merienda&family=Open+Sans&family=Parisienne&family=Satisfy&display=swap");
+
+:root {
+  --secondary-white: #e5e5e5;
+  --main-blue: #316aba;
+  --main-black: #303030;
+  --main-white: #f6f6f6;
+}
+
+.Menu a {
+  text-decoration: none;
+  color: var(--main-white);
+}
+
+.Menu li {
+  list-style-type: none;
+  text-align: center;
+  margin: auto;
+  font-size: 1.7em;
+  vertical-align: middle;
+  line-height: 15vh;
+}
+.Menu h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 3.6rem;
+  text-align: center;
+  line-height: 15vh;
+}
+/* great vibes */
+.background-img {
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary-white);
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+
+  /*recipes formatting (squares)*/
+
+  .recipes-container {
+    padding-top: 4vh;
+    width: 100%;
+    z-index: 2;
+    border-radius: 50px 50px 0 0;
+    background-color: var(--main-white);
+  }
+
+  .recipe-square {
+    width: 86%;
+    height: 15vh;
+    margin: 7%;
+    background-color: var(--main-blue);
+    border-radius: 10px;
+    font-family: "open-sans", sans-serif;
+  }
+  .create-recipe-button {
+    width: 86%;
+    height: 10vh;
+    margin: 7%;
+    background-color: var(--main-white);
+    border: 1.5px solid var(--main-blue);
+    color: var(--main-blue);
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+    font-size: 1.7em;
+    vertical-align: middle;
+    line-height: 10vh;
+    margin-top: 2vh;
+    font-family: "open-sans", sans-serif;
+  }
+}

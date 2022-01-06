@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Merienda&family=Open+Sans&family=Parisienne&family=Satisfy&display=swap");
+
+body {
+  margin: 0;
+  display: inline;
+  width: 100vw;
+  height: 100vh;
+}
+
+:root {
+  --secondary-white: #e5e5e5;
+  --main-blue: #316aba;
+  --main-black: #303030;
+  --main-white: #f6f6f6;
+}
+
+.RecipeCreate {
+  background-color: var(--secondary-white);
+  overflow: hidden;
+  margin: 0;
+}
+
+.RecipeCreate h1 {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  font-size: 2.2rem;
+  line-height: 19vh;
+}
+
+.RecipeCreate form {
+  min-height: 7vh;
+}
+.RecipeCreate form input,
+.RecipeCreate form button {
+  width: 75%;
+  font-size: 1.3rem;
+  border: none;
+  background: var(--secondary-white);
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+}
+.RecipeCreate form button {
+  color: var(--main-blue);
+  background: var(--main-white);
+  margin-top: 2%;
+  height: 10%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.RecipeCreate form button:hover {
+  background: white;
+  color: var(--main-black);
+}
+.RecipeCreate .submitButton {
+}
+
+.recipeCreate .cancelButton {
+}
+
+.RecipeCreate .form-container {
+  padding-top: 4vh;
+  height: 80vh;
+  width: 100%;
+  z-index: 2;
+  border-radius: 50px 50px 0 0;
+  background-color: var(--main-white);
+}
+.RecipeCreate .todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.RecipeCreate .todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.RecipeCreate .todo {
+  margin: 0.5rem;
+  background: var(--secondary-white);
+  font-size: 1.5rem;
+  max-width: 74%;
+  color: var(--main-black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+.RecipeCreate .filter-todo {
+  padding: 1rem;
+}
+.RecipeCreate .todo li {
+  flex: 1;
+}
+
+.RecipeCreate .trash-btn,
+.RecipeCreate .complete-btn {
+  background: var(--main-black);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.RecipeCreate .complete-btn {
+  background: var(--main-blue);
+}
+.RecipeCreate .todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.RecipeCreate .fa-trash,
+.RecipeCreate .fa-arrow-down {
+  pointer-events: none;
+}
+
+.RecipeCreate .fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+.RecipeCreate .completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/*CUSTOM SELECTOR */
+.RecipeCreate select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+}
+
+/* Custom Select */
+.RecipeCreate .select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.RecipeCreate select {
+  color: #ff6f47;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+  width: 12rem;
+}
+/* Arrow */
+.RecipeCreate .select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: #ff6f47;
+  cursor: pointer;
+  pointer-events: none;
+}

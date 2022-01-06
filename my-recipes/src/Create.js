@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import './App.css';
+
+import './css/Create.css';
 //import comp
 import AddIngredient from './Components/AddIngredient';
 import IngredientList from './Components/IngredientList';
@@ -16,6 +17,7 @@ function Create() {
   const [recipeTitle, setRecipeTitle] = useState("");
   const [recipeLink, setRecipeLink] = useState("");
   const [recipeImage, setRecipeImage] = useState("");
+
 
   //
   const submitRecipe = async () => {
@@ -42,11 +44,13 @@ function Create() {
 
 
 
+
   return (
     <div className="RecipeCreate">
       <header>
-        <h1>Add a Recipe Manually</h1>
+        <h1>Create A Recipe</h1>
       </header>
+      <div className = "form-container">
       <TitlePicker recipeTitle = {recipeTitle} setRecipeTitle={setRecipeTitle} />
       <LinkPicker recipeLink = {recipeLink} setRecipeLink = {setRecipeLink} />
       <ImagePicker recipeImage = {recipeImage} setRecipeImage = {setRecipeImage} /> 
@@ -57,11 +61,17 @@ function Create() {
         inputText={inputText}
       />
       <IngredientList setRecipes={setRecipes} recipes={recipes}/>
-      <Link to="/view">
+      <Link to="/">
         <button onClick={submitRecipe}>
           Submit Recipe
         </button>
       </Link>
+      <Link to="/">
+        <button>
+          Cancel
+        </button>
+      </Link>
+    </div>
     </div>
   );
 }

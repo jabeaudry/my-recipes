@@ -56,7 +56,7 @@ app.use(cors());
 // });
 
 
-//gets the recipes titles and pictures
+//gets all the recipes titles, links and pictures
 app.get("/recipes", async (req,res) => {
     db.query('SELECT * FROM recipes', (err, results) => { 
 		if (err) throw err;
@@ -66,12 +66,22 @@ app.get("/recipes", async (req,res) => {
     
 });
 
-//gets the specific recipe
+
+//gets the specific recipes titles, links and pictures
+app.get("/recipes/:id", async (req,res) => {
+    db.query(`SELECT * FROM recipes WHERE recipes.recipeID = "${req.params.id}";`, (err, results) => { 
+		if (err) throw err;
+        res.send(results); 
+        console.log(results);
+    }); 
+});
+
+
 
 //gets the specific ingredients
 app.get("/recIngr/:id", async (req,res) => {
     console.log(req.params);
-    db.query(`SELECT * FROM recipes LEFT JOIN ingredients ON recipes.recipeID = ingredients.recipeID WHERE recipes.recipeID = "${req.params.id}";`, (err, results) => { 
+    db.query(`SELECT * FROM ingredients WHERE ingredients.recipeID = "${req.params.id}";`, (err, results) => { 
 		if (err) throw err;
         res.send(results); 
         console.log(results);

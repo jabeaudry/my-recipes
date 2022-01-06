@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './App.css';
+//import './App.css';
 import {Route, Link, Routes} from 'react-router-dom';
 //import comp
 import Menu from './Menu';
