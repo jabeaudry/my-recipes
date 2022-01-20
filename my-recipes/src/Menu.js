@@ -48,7 +48,7 @@ function Menu (){
                         return(
                                 <Link to={"/view/" + element.recipeID}>
                                     <div className = "recipe-square">
-                                        <li>{element.recipeName}</li>
+                                        <li key={Math.random()*1000}>{element.recipeName}</li>
                                     </div> 
                                 </Link>
                             

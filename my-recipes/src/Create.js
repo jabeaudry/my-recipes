@@ -4,19 +4,23 @@ import './css/Create.css';
 //import comp
 import AddIngredient from './Components/AddIngredient';
 import IngredientList from './Components/IngredientList';
+import AddSteps from './Components/AddSteps';
 import TitlePicker from './Components/TitlePicker';
 import LinkPicker from './Components/LinkPicker';
 import ImagePicker from './Components/ImagePicker';
 import {Route, Link} from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 //import axios from 'axios';
 
 
 function Create() {
   const [inputText, setInputText] = useState("");
+  const [inputTextSteps, setInputTextSteps] = useState("");
   const [recipes, setRecipes] = useState([]);
   const [recipeTitle, setRecipeTitle] = useState("");
   const [recipeLink, setRecipeLink] = useState("");
   const [recipeImage, setRecipeImage] = useState("");
+  const [recipeSteps, setRecipeSteps] = useState([]);
 
 
   //
@@ -25,7 +29,8 @@ function Create() {
       recipeTitle: recipeTitle,
       recipeLink: recipeLink,
       recipeImage: recipeImage,
-      recipeIngredients: recipes.map((element) => element.text)
+      recipeIngredients: recipes.map((element) => element.text),
+      recipeSteps: recipeSteps.map((element) => element.text)
     };
     //call the post endpoint to submit the recipe
     const response = await fetch("http://localhost:5000/submitRecipe",{
@@ -54,6 +59,7 @@ function Create() {
       <TitlePicker recipeTitle = {recipeTitle} setRecipeTitle={setRecipeTitle} />
       <LinkPicker recipeLink = {recipeLink} setRecipeLink = {setRecipeLink} />
       <ImagePicker recipeImage = {recipeImage} setRecipeImage = {setRecipeImage} /> 
+
       <AddIngredient 
         recipes={recipes} 
         setRecipes={setRecipes} 
@@ -61,15 +67,25 @@ function Create() {
         inputText={inputText}
       />
       <IngredientList setRecipes={setRecipes} recipes={recipes}/>
+      
+      {/*steps section*/}
+      <AddSteps 
+        steps={recipeSteps} 
+        setSteps={setRecipeSteps} 
+        setInputText={setInputTextSteps} 
+        inputText={inputTextSteps}
+      />
+      <IngredientList setRecipes={setRecipeSteps} recipes={recipeSteps}/>
+
       <Link to="/">
-        <button onClick={submitRecipe}>
+        <Button onClick={submitRecipe} variant="primary">
           Submit Recipe
-        </button>
+        </Button>
       </Link>
       <Link to="/">
-        <button>
+        <Button  variant="secondary">
           Cancel
-        </button>
+        </Button>
       </Link>
     </div>
     </div>

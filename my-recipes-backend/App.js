@@ -88,6 +88,16 @@ app.get("/recIngr/:id", async (req,res) => {
     }); 
 });
 
+//gets the specific steps
+app.get("/recSteps/:id", async (req,res) => {
+    console.log(req.params);
+    db.query(`SELECT * FROM steps WHERE steps.recipeID = "${req.params.id}";`, (err, results) => { 
+		if (err) throw err;
+        res.send(results); 
+        console.log(results);
+    }); 
+});
+
 //sends the title, link, ingredients and image of the recipe to the db when button is pressed
 app.post("/submitRecipe", async (req,res) => {
     // console.log(req);
@@ -121,6 +131,11 @@ app.post("/submitRecipe", async (req,res) => {
             db.query(sql2, function (err, res) {
                 if (err) throw err;
                 console.log(result);
+            });
+            const sql3 = `INSERT INTO steps (steps, recipeID) VALUES ("${recipeSteps}", ${result.insertId});`;
+            db.query(sql3, function (err, res) {
+                if (err) throw err;
+                //console.log(result);
             });
         }
     });

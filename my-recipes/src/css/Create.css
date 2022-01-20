@@ -53,11 +53,6 @@ body {
   background: white;
   color: var(--main-black);
 }
-.RecipeCreate .submitButton {
-}
-
-.recipeCreate .cancelButton {
-}
 
 .RecipeCreate .form-container {
   padding-top: 4vh;
