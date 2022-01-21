@@ -60,6 +60,7 @@ function Create() {
       <LinkPicker recipeLink = {recipeLink} setRecipeLink = {setRecipeLink} />
       <ImagePicker recipeImage = {recipeImage} setRecipeImage = {setRecipeImage} /> 
 
+      <h3>Add ingredients:</h3>
       <AddIngredient 
         recipes={recipes} 
         setRecipes={setRecipes} 
@@ -68,6 +69,7 @@ function Create() {
       />
       <IngredientList setRecipes={setRecipes} recipes={recipes}/>
       
+      <h3>Add steps:</h3>
       {/*steps section*/}
       <AddSteps 
         steps={recipeSteps} 
@@ -78,12 +80,12 @@ function Create() {
       <IngredientList setRecipes={setRecipeSteps} recipes={recipeSteps}/>
 
       <Link to="/">
-        <Button onClick={submitRecipe} variant="primary">
+        <Button onClick={submitRecipe} variant="primary" bsPrefix="btn submit-button-create">
           Submit Recipe
         </Button>
       </Link>
       <Link to="/">
-        <Button  variant="secondary">
+        <Button  variant="secondary" bsPrefix="btn submit-button-delete">
           Cancel
         </Button>
       </Link>

@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Merienda&family=Open+Sans&family=Parisienne&family=Satisfy&display=swap");
 
-body {
-  margin: 0;
-  display: inline;
-  width: 100vw;
-  height: 100vh;
-}
-
 :root {
   --secondary-white: #e5e5e5;
   --main-blue: #316aba;
@@ -14,23 +7,49 @@ body {
   --main-white: #f6f6f6;
 }
 
+html {
+  scroll-behavior: smooth;
+  background-color: var(--main-white);
+}
+body {
+  margin: 0;
+  display: inline;
+  width: 100vw;
+  height: 100vh;
+}
+
 .RecipeCreate {
   background-color: var(--secondary-white);
-  overflow: hidden;
   margin: 0;
 }
 
 .RecipeCreate h1 {
   font-family: "Open Sans", sans-serif;
   text-align: center;
-  margin: auto;
   width: 100%;
   font-size: 2.2rem;
-  line-height: 19vh;
+  line-height: 17vh;
+  padding-top: 3%;
+}
+
+.RecipeCreate h3 {
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+  margin: auto;
+  width: 75%;
+  font-size: 1.6rem;
+  margin-top: 7%;
+  margin-bottom: 2%;
 }
 
 .RecipeCreate form {
   min-height: 7vh;
+  margin-top: 1.4vh;
+}
+.RecipeCreate .todo-input.input-with-button {
+  width: 65%;
+  margin-right: 0;
+  margin-bottom: 3vh;
 }
 .RecipeCreate form input,
 .RecipeCreate form button {
@@ -42,12 +61,14 @@ body {
   margin-right: 12.5%;
 }
 .RecipeCreate form button {
-  color: var(--main-blue);
-  background: var(--main-white);
+  color: var(--main-white);
+  margin: 0;
+  background: var(--main-blue);
   margin-top: 2%;
   height: 10%;
   cursor: pointer;
   transition: all 0.3s ease;
+  width: 10%;
 }
 .RecipeCreate form button:hover {
   background: white;
@@ -56,7 +77,6 @@ body {
 
 .RecipeCreate .form-container {
   padding-top: 4vh;
-  height: 80vh;
   width: 100%;
   z-index: 2;
   border-radius: 50px 50px 0 0;
@@ -64,25 +84,31 @@ body {
 }
 .RecipeCreate .todo-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
+  margin-left: 12.5%;
 }
 
 .RecipeCreate .todo-list {
-  min-width: 30%;
+  width: 100%;
   list-style: none;
+  padding-inline-start: 0px;
+  margin-block-start: 0px;
+  margin-block-end: 0em;
+  margin-left: 0;
 }
 
 .RecipeCreate .todo {
-  margin: 0.5rem;
+  margin-bottom: 0.5rem;
   background: var(--secondary-white);
   font-size: 1.5rem;
-  max-width: 74%;
+  width: 75%;
   color: var(--main-black);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: left;
   transition: all 1s ease;
+  word-wrap: break-word;
 }
 .RecipeCreate .filter-todo {
   padding: 1rem;
@@ -96,7 +122,7 @@ body {
   background: var(--main-black);
   color: white;
   border: none;
-  padding: 1rem;
+  width: 10%;
   cursor: pointer;
   font-size: 1rem;
 }
@@ -105,6 +131,7 @@ body {
 }
 .RecipeCreate .todo-item {
   padding: 0rem 0.5rem;
+  margin-top: 2%;
 }
 
 .RecipeCreate .fa-trash,
@@ -156,4 +183,26 @@ body {
   background: #ff6f47;
   cursor: pointer;
   pointer-events: none;
+}
+
+.btn.submit-button-create {
+  background-color: var(--main-blue);
+  border-color: var(--main-blue);
+  color: var(--main-white);
+  margin-bottom: 5vh;
+  margin-top: 6vh;
+  margin-left: 12.5%;
+  margin-right: 3%;
+}
+.btn.submit-button-delete {
+  background-color: var(--main-black);
+  border-color: var(--main-black);
+  color: var(--main-white);
+  margin-bottom: 5vh;
+  margin-top: 6vh;
+}
+
+.RecipeCreate .todo li {
+  flex: 1 1;
+  word-break: break-all;
 }

@@ -19,7 +19,7 @@ const AddIngredient = ({setInputText, recipes, setRecipes, inputText}) => {
             <input 
                 onChange = {inputTextHandler} 
                 type="text" 
-                className="todo-input" 
+                className="todo-input input-with-button" 
                 placeholder="Ingredient"
                 value={inputText}
             />

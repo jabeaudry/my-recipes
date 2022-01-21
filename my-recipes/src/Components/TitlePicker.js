@@ -9,7 +9,7 @@ const TitlePicker = ({recipeTitle, setRecipeTitle}) => {
     
     return(
         <form> 
-            <input 
+            <input  
                 onChange = {titleTextHandler} 
                 type="text" 
                 className="todo-input" 

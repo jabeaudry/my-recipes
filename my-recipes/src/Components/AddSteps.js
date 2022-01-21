@@ -19,7 +19,7 @@ const AddSteps = ({setInputText, steps, setSteps, inputText}) => {
             <input 
                 onChange = {inputTextHandler} 
                 type="text" 
-                className="todo-input" 
+                className="todo-input input-with-button" 
                 placeholder="Step"
                 value={inputText}
             />

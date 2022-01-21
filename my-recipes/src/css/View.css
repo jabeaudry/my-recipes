@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Merienda&family=Open+Sans&family=Parisienne&family=Satisfy&display=swap");
+
+:root {
+  --secondary-white: #e5e5e5;
+  --main-blue: #316aba;
+  --main-black: #303030;
+  --main-white: #f6f6f6;
+}
+
+.View a {
+  text-decoration: none;
+  color: var(--main-white);
+}
