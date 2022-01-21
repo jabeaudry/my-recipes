@@ -10,7 +10,7 @@ const AddSteps = ({setInputTextSteps, steps, setSteps, inputTextSteps}) => {
         e.preventDefault();
 
         setSteps([
-            ...steps, {text: inputTextSteps, id: Math.random()*1000}
+            ...steps, {text: inputTextSteps, id: Math.random()*100}
         ]);
         setInputTextSteps("");
     } 

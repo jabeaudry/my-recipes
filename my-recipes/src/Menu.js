@@ -1,6 +1,6 @@
 import React, {useEffect, useLayoutEffect, useState} from 'react';
 import {Route, Link, Router} from 'react-router-dom';
-import NoRecipes from './Components/NoRecipes'; 
+
 import './css/Menu.css';
 
 
@@ -21,14 +21,14 @@ function Menu (){
     }, []);
 
     //verifies URLs for images
-    function checkURL(url) {
-        if (url.match(/\.(jpeg|jpg|gif|png)$/) != null){
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
+    // function checkURL(url) {
+    //     if (url.match(/\.(jpeg|jpg|gif|png)$/) != null){
+    //         return true;
+    //     }
+    //     else {
+    //         return false;
+    //     }
+    // }
 
     return(
         <div className="Menu">

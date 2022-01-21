@@ -6,6 +6,7 @@ import {
     Route,
     useParams
 } from "react-router-dom";
+import './css/View.css';
 
 function View() {
     const [recipesIngr, setRecipesIngr] = useState([]);
@@ -37,6 +38,10 @@ function View() {
         setRecipeNameImageLink(data);
     };
 
+    //will only render the content provided by the user
+    
+
+
 
      //hook that runs after the return function
     useEffect( () => {
@@ -45,40 +50,85 @@ function View() {
         getRecipeNameLinkImage();
     }, []);
 
+    const areThereIngredients = () => {
+        if (recipesIngr.length > 0) {
+            console.log(recipesIngr.length);
+            return (
+                <div className = "ingreContainer">
+                    <h2>Ingredients</h2>
+                    {
+                        recipesIngr.map((element)  => {
+                            return(
+                                <div>{element.ingredient}</div>
+                            )
+                        })
+                    }
+                </div>
+            )
+        }
+    }
+    const areThereSteps = () => {
+        if (recipesSteps.length > 0) {
+            return (
+                <div className = "stepsContainer">
+                    <h2>Steps</h2>
+                        {
+                            recipesSteps.map((element)  => {
+                                return(
+                                    <div>{element.steps}</div>
+                                )
+                            })
+                        }       
+                </div>
+            )
+        }
+    }
+
+    const isThereALink = (element) => {
+        if (!(element === "")) {
+            return (
+                <h1>{element}</h1>
+            )
+        }
+    }
+
+    const isThereAnImage = (element) => {
+        if (!(element === "")) {
+            return (
+                <img src={`${element}`} className="recipe-image"></img>
+            )
+        }
+    }
+        
+    
 
     return(
+
         <div className="View">
+            
             {
                 //loads the title, image, link
                 recipeNameImageLink.map((element) => {
                     return(
                         <div>
                             <h1>{element.recipeName}</h1>
-                            <img src="${element.recipeImg}" className="recipe-image"></img>
-                            <h1>{element.recipeLink}</h1>
+                            {isThereAnImage(element.recipeImg)}    
+                            {isThereALink(element.recipeLink)}
                         </div>
                         
                     )
                 })
-            })
-            {<h2>Ingredients:</h2>}
-            {     
-                //loads the ingredients      
-                recipesIngr.map((element)  => {
-                    return(
-                        <div>{element.ingredient}</div>
-                    )
-                })
             }
-            {<h2>Steps:</h2>}
-            {
-                //loads the ingredients      
-                recipesSteps.map((element)  => {
-                    return(
-                        <div>{element.steps}</div>
-                    )
-                })
-            }
+                
+                
+                {
+                //loads the ingredients, if applicable
+                    areThereIngredients() 
+                }     
+                {
+                //loads the steps, if applicable
+                    areThereSteps()
+                }   
 
         </div>
     )

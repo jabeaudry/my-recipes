@@ -11,3 +11,17 @@
   text-decoration: none;
   color: var(--main-white);
 }
+
+.View {
+  background-color: var(--secondary-white);
+  margin: 0;
+}
+
+.View h1 {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  width: 100%;
+  font-size: 2.2rem;
+  line-height: 17vh;
+  padding-top: 3%;
+}
