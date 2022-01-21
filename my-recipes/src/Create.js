@@ -74,8 +74,8 @@ function Create() {
       <AddSteps 
         steps={recipeSteps} 
         setSteps={setRecipeSteps} 
-        setInputText={setInputTextSteps} 
-        inputText={inputTextSteps}
+        setInputTextSteps={setInputTextSteps} 
+        inputTextSteps={inputTextSteps}
       />
       <IngredientList setRecipes={setRecipeSteps} recipes={recipeSteps}/>
 

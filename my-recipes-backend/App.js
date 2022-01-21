@@ -124,18 +124,22 @@ app.post("/submitRecipe", async (req,res) => {
     //the second function runs after the first sql query, as the ingredients depend on a column from the first query (recipeID)
     db.query(sql, function (err, result) {
         if (err) throw err;
-        console.log("Result: " + result);
+        //console.log("Result: " + result);
         for (let i = 0; i< req.body.recipeIngredients.length; i++){
             const recipeIngredient = req.body.recipeIngredients[i];
             const sql2 = `INSERT INTO ingredients (ingredient, recipeID) VALUES ("${recipeIngredient}", ${result.insertId});`;
             db.query(sql2, function (err, res) {
                 if (err) throw err;
-                console.log(result);
+                //console.log(result);
             });
-            const sql3 = `INSERT INTO steps (steps, recipeID) VALUES ("${recipeSteps}", ${result.insertId});`;
+        }
+        for (let i = 0; i< req.body.recipeSteps.length; i++){
+            const recipeStep = req.body.recipeSteps[i];
+            const sql3 = `INSERT INTO steps (steps, recipeID) VALUES ("${recipeStep}", ${result.insertId});`;
             db.query(sql3, function (err, res) {
                 if (err) throw err;
-                //console.log(result);
+                console.log(result);
+                console.log(sql3);
             });
         }
     });

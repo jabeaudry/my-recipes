@@ -1,18 +1,18 @@
 import React from 'react';
 
-const AddSteps = ({setInputText, steps, setSteps, inputText}) => {
+const AddSteps = ({setInputTextSteps, steps, setSteps, inputTextSteps}) => {
     //js code
     const inputTextHandler = (e) => {
         console.log(e.target.value);
-        setInputText(e.target.value);
+        setInputTextSteps(e.target.value);
     };
     const submitStepsHandler = (e) => {
         e.preventDefault();
 
         setSteps([
-            ...steps, {text: inputText, id: Math.random()*1000}
+            ...steps, {text: inputTextSteps, id: Math.random()*1000}
         ]);
-        setInputText("");
+        setInputTextSteps("");
     } 
     return(
         <form> 
@@ -21,7 +21,7 @@ const AddSteps = ({setInputText, steps, setSteps, inputText}) => {
                 type="text" 
                 className="todo-input input-with-button" 
                 placeholder="Step"
-                value={inputText}
+                value={inputTextSteps}
             />
             <button onClick={submitStepsHandler} className="todo-button" type="submit">
                 <i className="fas fa-plus-square"></i>

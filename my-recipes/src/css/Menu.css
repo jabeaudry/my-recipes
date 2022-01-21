@@ -59,6 +59,10 @@
     border-radius: 10px;
     font-family: "open-sans", sans-serif;
   }
+
+  .recipe-square:hover {
+    color: var(--main-black);
+  }
   .create-recipe-button {
     width: 86%;
     height: 10vh;

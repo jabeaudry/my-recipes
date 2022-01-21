@@ -131,7 +131,6 @@ body {
 }
 .RecipeCreate .todo-item {
   padding: 0rem 0.5rem;
-  margin-top: 2%;
 }
 
 .RecipeCreate .fa-trash,
@@ -193,6 +192,11 @@ body {
   margin-top: 6vh;
   margin-left: 12.5%;
   margin-right: 3%;
+}
+.btn.submit-button-delete:hover {
+  color: var(--main-black);
+  background-color: var(--secondary-white);
+  border-color: var(--main-black);
 }
 .btn.submit-button-delete {
   background-color: var(--main-black);
