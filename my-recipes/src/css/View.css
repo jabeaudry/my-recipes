@@ -109,6 +109,7 @@
     border-radius: 50px 50px 0 0;
     background-color: var(--main-white);
     position: relative;
+    margin-left: 0;
   }
   .View .recipe-image {
     width: 86%;
