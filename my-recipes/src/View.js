@@ -87,7 +87,7 @@ function View() {
     const isThereALink = (element) => {
         if (!(element === "")) {
             return (
-                <h1>{element}</h1>
+                <a href={`${element}`}className = "viewing-link">Recipe link</a>
             )
         }
     }
@@ -100,7 +100,6 @@ function View() {
         }
     }
         
-    
 
     return(
 
@@ -112,24 +111,25 @@ function View() {
                     return(
                         <div>
                             <h1>{element.recipeName}</h1>
-                            {isThereAnImage(element.recipeImg)}    
-                            {isThereALink(element.recipeLink)}
+                                {isThereAnImage(element.recipeImg)}    
+                                {isThereALink(element.recipeLink)}
+                            
                         </div>
                         
                     )
                 })
             }
                 
-                
-                {
-                //loads the ingredients, if applicable
-                    areThereIngredients() 
-                }     
-                {
-                //loads the steps, if applicable
-                    areThereSteps()
-                }   
-
+                <div className='viewBody'>
+                    {
+                    //loads the ingredients, if applicable
+                        areThereIngredients() 
+                    }     
+                    {
+                    //loads the steps, if applicable
+                        areThereSteps()
+                    }   
+                </div>
         </div>
     )
 }

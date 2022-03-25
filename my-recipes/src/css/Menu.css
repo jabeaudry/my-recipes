@@ -5,6 +5,8 @@
   --main-blue: #316aba;
   --main-black: #303030;
   --main-white: #f6f6f6;
+  background-color: var(--secondary-white);
+  padding-bottom: 2%;
 }
 
 .Menu a {
@@ -38,32 +40,77 @@
   left: 0;
 }
 
+.recipes-container {
+  padding-top: 5%;
+  width: 60%;
+  z-index: 2;
+  border-radius: 50px 50px 50px 50px;
+  background-color: var(--main-white);
+  margin-left: 20%;
+  padding-bottom: 5%;
+}
+
+.recipe-square {
+  width: 70%;
+  height: 15vh;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 6%;
+  margin-bottom: 6%;
+  background-color: var(--main-blue);
+  border-radius: 10px;
+  font-family: "open-sans", sans-serif;
+}
+.recipe-square:hover {
+  color: var(--main-black);
+}
+
+.create-recipe-button {
+  width: 70%;
+  height: 10vh;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 6%;
+  background-color: var(--main-white);
+  border: 1.5px solid var(--main-blue);
+  color: var(--main-blue);
+  border-radius: 10px;
+  text-align: center;
+  margin: auto;
+  font-size: 1.7em;
+  vertical-align: middle;
+  line-height: 10vh;
+  margin-top: 2vh;
+  font-family: "open-sans", sans-serif;
+}
+
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
 
   /*recipes formatting (squares)*/
 
   .recipes-container {
-    padding-top: 4vh;
     width: 100%;
-    z-index: 2;
-    border-radius: 50px 50px 0 0;
     background-color: var(--main-white);
+    margin-left: 0;
   }
 
   .recipe-square {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     width: 86%;
     height: 15vh;
     margin: 7%;
     background-color: var(--main-blue);
-    border-radius: 10px;
-    font-family: "open-sans", sans-serif;
   }
 
-  .recipe-square:hover {
-    color: var(--main-black);
-  }
   .create-recipe-button {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     width: 86%;
     height: 10vh;
     margin: 7%;

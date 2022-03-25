@@ -5,6 +5,8 @@
   --main-blue: #316aba;
   --main-black: #303030;
   --main-white: #f6f6f6;
+  background-color: var(--secondary-white);
+  padding-bottom: 2%;
 }
 
 html {
@@ -77,10 +79,12 @@ body {
 
 .RecipeCreate .form-container {
   padding-top: 4vh;
-  width: 100%;
+  width: 60%;
   z-index: 2;
   border-radius: 50px 50px 0 0;
   background-color: var(--main-white);
+  margin-left: 20%;
+  padding-top: 4%;
 }
 .RecipeCreate .todo-container {
   display: flex;
@@ -209,4 +213,12 @@ body {
 .RecipeCreate .todo li {
   flex: 1 1;
   word-break: break-all;
+}
+
+@media only screen and (max-width: 768px) {
+  .RecipeCreate .form-container {
+    padding-top: 4vh;
+    width: 100%;
+    margin-left: 0;
+  }
 }
